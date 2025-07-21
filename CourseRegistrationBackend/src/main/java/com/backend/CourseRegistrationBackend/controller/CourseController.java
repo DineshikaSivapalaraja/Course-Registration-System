@@ -1,6 +1,7 @@
 package com.backend.CourseRegistrationBackend.controller;
 
 import com.backend.CourseRegistrationBackend.model.Course;
+import com.backend.CourseRegistrationBackend.model.CourseRegistry;
 import com.backend.CourseRegistrationBackend.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,11 @@ public class CourseController {
     public List<Course> availableCourses(){
         return courseService.availableCourses();
 
+    }
+
+    @GetMapping("courses/enrolled")
+    public List<CourseRegistry> enrolledStudents(){
+        return courseService.enrolledStudents();
     }
 
 }
