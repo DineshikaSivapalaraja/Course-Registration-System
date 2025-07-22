@@ -5,6 +5,8 @@ import com.backend.CourseRegistrationBackend.model.CourseRegistry;
 import com.backend.CourseRegistrationBackend.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -21,9 +23,17 @@ public class CourseController {
 
     }
 
-    @GetMapping("courses/enrolled")
+    @GetMapping("/courses/enrolled")
     public List<CourseRegistry> enrolledStudents(){
         return courseService.enrolledStudents();
+    }
+
+    @PostMapping("/courses/register")
+    public String enrollCourse(@RequestParam("name") String name,
+                               @RequestParam("emailId") String emailId,
+                               @RequestParam("courseName") String courseName){
+        courseService.enrollCourse(name,emailId,courseName);
+        return "Congratulation "+name+" ! Successfully enrolled for "+courseName+" course";
     }
 
 }
