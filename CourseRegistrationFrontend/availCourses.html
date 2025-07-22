@@ -1,17 +1,40 @@
 <html>
     <head>
         <title>Available Courses</title>
+        <script type="text/javascript" src="myscript.js"></script>
         <style>
             body {
                 font-family: Arial, sans-serif;
                 background-color: #f0f0f0;
                 text-align: center;
-                margin-top: 70px;
+                margin-top: 70px; 
+                padding:50px;
+            }
+            td {
+                background-color:white;
             }
         </style>
     </head>
 
     <body>
         <h2>Available Courses</h2>
+        <table align="center" border="1" style="background-color: black;">
+            <tr align="center" style="background-color: rgb(198, 231, 87);">
+                <th width="80">Course Id</th>
+                <th width="180">Course Name</th>
+                <th width="180">Instructor</th>
+                <th width="150">Duration in Weeks</th>
+            </tr>
+
+            <tbody align="center" id="courseTable"></tbody>
+        </table>
+
+
+        <script type="text/javascript">
+            window.onload = function(){
+                showCourses();
+            }
+
+        </script>
     </body>
 </html>
