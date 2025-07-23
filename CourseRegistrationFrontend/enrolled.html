@@ -1,17 +1,36 @@
 <html>
     <head>
         <title>Enrolled Students</title>
+        <script type="text/javascript" src="myscript.js"></script>
         <style>
             body {
-                font-family: Arial, sans-serif;
-                background-color: #f0f0f0;
                 text-align: center;
-                margin-top: 70px;
+                padding:50px;
+            }
+            td {
+                background-color:white;
             }
         </style>
     </head>
 
     <body>
         <h2>Enrolled Students</h2>
+        <table align="center" border="1" style="background-color: black;">
+            <tr align="center" style="background-color: rgb(198, 231, 87);">
+                <th width="100">Name</th>
+                <th width="200">Email ID</th>
+                <th width="180">Course Name</th>
+            </tr>
+
+            <tbody align="center" id="enrolledTable"></tbody>
+        </table>
+
+
+        <script type="text/javascript">
+            window.onload = function(){
+                enrolledStudents();
+            }
+        </script>
+
     </body>
 </html>
